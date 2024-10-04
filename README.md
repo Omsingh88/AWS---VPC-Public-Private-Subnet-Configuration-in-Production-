@@ -57,7 +57,6 @@ Below are screenshots demonstrating the different stages of the project setup an
 ![Auto Scaling Group Configuration 3](screenshots/auto-scaling-group-configuration3.png)
 ![Auto Scaling Group Configuration 4](screenshots/auto-scaling-group-configuration4.png)
 ![Auto Scaling Group Configuration 5](screenshots/auto-scaling-group-configuration5.png)
-![Auto Scaling Group Configuration 6](screenshots/auto-scaling-group-configuration6.png)
 
 ### 3. EC2 Instances Created by Auto Scaling
 ![EC2 Instances](screenshots/ec2-instances.png)
