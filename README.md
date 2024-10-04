@@ -23,7 +23,6 @@ This example demonstrates how to create a Virtual Private Cloud (VPC) suitable f
 
 2. **NAT Gateway and Route Table Setup**:
    - An Internet Gateway was attached to the VPC.
-   - NAT Gateways were deployed in each public subnet.
    - Custom route tables were created:
      - Public subnets are associated with a route table directing internet-bound traffic to the Internet Gateway.
      - Private subnets are associated with a route table directing traffic to the NAT Gateway for internet access.
@@ -41,35 +40,52 @@ The application running on the private servers can be accessed using the DNS nam
 ### Example URL
 - The application can be accessed at: `http://<your-load-balancer-dns-name>`
 
+## Application Status on EC2 Instances
+The application running on the EC2 instances can be verified for its status, ensuring that it is up and running as intended.
+
 ## Screenshots
 Below are screenshots demonstrating the different stages of the project setup and execution:
 
 ### 1. Creating the VPC and Resources
-![Creating VPC](screenshots/creating-vpc.png)
+![Creating VPC 1](screenshots/vpc-creation1.png)
+![Creating VPC 2](screenshots/vpc-creation2.png)
+![Creating VPC 3](screenshots/vpc-creation3.png)
 
-### 2. NAT Gateway Setup
-![NAT Gateway Setup](screenshots/nat-gateway-setup.png)
+### 2. Auto Scaling Group Configuration
+![Auto Scaling Group Configuration 1](screenshots/auto-scaling-group-configuration1.png)
+![Auto Scaling Group Configuration 2](screenshots/auto-scaling-group-configuration2.png)
+![Auto Scaling Group Configuration 3](screenshots/auto-scaling-group-configuration3.png)
+![Auto Scaling Group Configuration 4](screenshots/auto-scaling-group-configuration4.png)
+![Auto Scaling Group Configuration 5](screenshots/auto-scaling-group-configuration5.png)
+![Auto Scaling Group Configuration 6](screenshots/auto-scaling-group-configuration6.png)
 
-### 3. Load Balancer Configuration
-![Load Balancer Configuration](screenshots/load-balancer-configuration.png)
+### 3. EC2 Instances Created by Auto Scaling
+![EC2 Instances](screenshots/ec2-instances.png)
 
-### 4. Load Balancer Target Group
-![Load Balancer Target Group](screenshots/load-balancer-target-group.png)
+### 4. Bastion Host Connection to Private EC2
+![Bastion Host Connection](screenshots/bastion-host-connection.png)
 
-### 5. Application Access via Load Balancer
-![Application Access](screenshots/application-access.png)
+### 5. Load Balancer and Target Group Creation
+![Load Balancer Configuration 1](screenshots/load-balancer-configuration1.png)
+![Load Balancer Configuration 2](screenshots/load-balancer-configuration2.png)
+![Load Balancer Configuration 3](screenshots/load-balancer-configuration3.png)
+![Load Balancer Configuration 4](screenshots/load-balancer-configuration4.png)
+![Load Balancer Configuration 5](screenshots/load-balancer-configuration5.png)
+![Load Balancer Configuration 6](screenshots/load-balancer-configuration6.png)
+![Load Balancer Configuration 7](screenshots/load-balancer-configuration7.png)
+![Load Balancer Configuration 8](screenshots/load-balancer-configuration8.png)
+![Load Balancer Configuration 9](screenshots/load-balancer-configuration9.png)
 
-### 6. Auto Scaling Group Configuration
-![Auto Scaling Group Configuration](screenshots/auto-scaling-group-configuration.png)
+### 6. Application Status on EC2 Instances
+![Application Status](screenshots/application-status.png)
+
+### 7. Application Access via DNS URL
+![Accessing Application 1](screenshots/application-access1.png)
+![Accessing Application 2](screenshots/application-access2.png)
 
 ## Future Enhancements
 - **Monitoring and Alerts**: Set up CloudWatch for monitoring instance performance and sending alerts.
 - **Security Group Optimization**: Review and optimize security group rules for enhanced security.
-
-## Project Summary
-**VPC Implementation for Scalable 2-Tier Architecture:**
-- Designed a secure AWS VPC for a 2-tier application featuring custom IP ranges, private subnets, route tables, and security groups.
-- Launched the application utilizing an Elastic Load Balancer (ELB) target group and Auto Scaling group, ensuring controlled access and validated connectivity.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
