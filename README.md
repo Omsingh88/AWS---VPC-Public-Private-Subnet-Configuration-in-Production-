@@ -1,4 +1,4 @@
-# AWS VPC Setup for a 2-Tier Application
+# AWS - VPC Public-Private Subnet Configuration in Production 
 
 ## Project Description
 This example demonstrates how to create a Virtual Private Cloud (VPC) suitable for servers in a production environment. To improve resiliency, you deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load Balancer. For additional security, the servers are deployed in private subnets. The servers receive requests through the load balancer and can connect to the internet via a NAT gateway. To enhance resiliency, the NAT gateway is deployed in both Availability Zones.
