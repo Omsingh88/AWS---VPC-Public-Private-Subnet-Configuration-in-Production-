@@ -16,26 +16,21 @@ This example demonstrates how to create a Virtual Private Cloud (VPC) suitable f
 ## Implementation Details
 ### Step-by-Step Guide
 
-1. **VPC and Resource Creation**:
-   - Created a VPC with a CIDR block (e.g., `10.0.0.0/16`) using the "VPC and More" option, which automatically provisions additional resources.
-   - The following resources were created:
-     - **Public Subnet 1**: For the Application Load Balancer and Bastion Host (e.g., `10.0.1.0/24`).
-     - **Private Subnet 1**: For EC2 instances running the application (e.g., `10.0.2.0/24`).
-     - **Public Subnet 2**: In the second Availability Zone for redundancy (e.g., `10.0.3.0/24`).
-     - **Private Subnet 2**: In the second Availability Zone for redundancy (e.g., `10.0.4.0/24`).
+ 1. **VPC and Resource Creation**:
+   - First, I created a Virtual Private Cloud (VPC) with two public subnets and two private subnets. Each subnet was attached to different route tables and internet gateways to ensure 
+     proper network segmentation and security.
+     
+2. **Auto Scaling Group Configuration**:
+   - An Auto Scaling group was configured to ensure that a specified number of EC2 instances are running at all times, automatically scaling in or out based on the defined policies.
+     
+3. **Creation a Bastion Host**.
+   - For secure access to the private subnets, I set up a bastion host. This instance serves as a jump box, allowing me to SSH into the private instances securely. By connecting to the 
+     bastion host, I can then access the instances in the private subnets.
 
-2. **NAT Gateway and Route Table Setup**:
-   - An Internet Gateway was attached to the VPC.
-   - Custom route tables were created:
-     - Public subnets are associated with a route table directing internet-bound traffic to the Internet Gateway.
-     - Private subnets are associated with a route table directing traffic to the NAT Gateway for internet access.
-
-3. **Load Balancer and Target Group**:
+4. **Load Balancer and Target Group**:
    - An Application Load Balancer was created to route traffic to EC2 instances running in the private subnets.
    - A target group was set up for the EC2 instances to ensure traffic is directed correctly.
 
-4. **Auto Scaling Group Configuration**:
-   - An Auto Scaling group was configured to ensure that a specified number of EC2 instances are running at all times, automatically scaling in or out based on the defined policies.
 
 ## Application Access
 The application running on the private servers can be accessed using the DNS name of the load balancer, ensuring secure and scalable access to the service.
@@ -77,7 +72,6 @@ scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/u
 ### 5. Load Balancer and Target Group Creation
 ![Load Balancer Configuration 1](screenshots/load-balancer-configuration1.png)
 ![Load Balancer Configuration 2](screenshots/load-balancer-configuration2.png)
-![Load Balancer Configuration 3](screenshots/load-balancer-configuration3.png)
 ![Load Balancer Configuration 4](screenshots/load-balancer-configuration4.png)
 ![Load Balancer Configuration 5](screenshots/load-balancer-configuration5.png)
 ![Load Balancer Configuration 6](screenshots/load-balancer-configuration6.png)
