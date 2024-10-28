@@ -65,7 +65,14 @@ Below are screenshots demonstrating the different stages of the project setup an
 ![EC2 Instances](screenshots/ec2-instances.png)
 
 ### 4. Bastion Host Connection to Private EC2
+**For secure access to the private subnets, I set up a bastion host. This instance serves as a jump box, allowing me to SSH into the private instances securely. By connecting to the bastion host, I can then access the instances in the private subnets.
+
+From my local machine, I used the following SSH command to connect to the bastion host:
+```bash
+scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/ubuntu
+```
 ![Bastion Host Connection](screenshots/bastion-host-connection.png)
+![Bastion Host Connection](screenshots/bastion-host-connection1.png)
 
 ### 5. Load Balancer and Target Group Creation
 ![Load Balancer Configuration 1](screenshots/load-balancer-configuration1.png)
@@ -78,16 +85,11 @@ Below are screenshots demonstrating the different stages of the project setup an
 ![Load Balancer Configuration 8](screenshots/load-balancer-configuration8.png)
 ![Load Balancer Configuration 9](screenshots/load-balancer-configuration9.png)
 
-### 6. Application Status on EC2 Instances
+### 6. Launching the Web Application
+**Finally, I used Python’s built-in HTTP server to host the website. By running the following command, my website became externally visible:
 ![Application Status](screenshots/application-status.png)
 
 ### 7. Application Access via DNS URL
 ![Accessing Application 1](screenshots/application-access1.png)
 ![Accessing Application 2](screenshots/application-access2.png)
 
-## Future Enhancements
-- **Monitoring and Alerts**: Set up CloudWatch for monitoring instance performance and sending alerts.
-- **Security Group Optimization**: Review and optimize security group rules for enhanced security.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
