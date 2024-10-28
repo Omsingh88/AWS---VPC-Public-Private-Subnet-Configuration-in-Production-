@@ -8,7 +8,6 @@ This example demonstrates how to create a Virtual Private Cloud (VPC) suitable f
 - **Auto Scaling Group**: Automatically adjusts the number of EC2 instances based on demand to ensure high availability and fault tolerance.
 - **Application Load Balancer**: Distributes incoming traffic across multiple targets, ensuring that the application remains responsive under varying loads.
 - **Bastion Host**: Provides secure access to EC2 instances in private subnets.
-- **NAT Gateway**: Allows instances in private subnets to access the internet securely.
 
 ## Architecture Diagram
 ![Architecture Diagram](screenshots/architecture-diagram.png)
