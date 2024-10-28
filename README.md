@@ -80,6 +80,9 @@ scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/u
 
 ### 6. Launching the Web Application
 **Finally, I used Python’s built-in HTTP server to host the website. By running the following command, my website became externally visible**:
+```python
+python3 -m http.server 8000
+```
 ![Application Status](screenshots/application-status.png)
 
 ### 7. Application Access via DNS URL
