@@ -65,9 +65,9 @@ Below are screenshots demonstrating the different stages of the project setup an
 ![EC2 Instances](screenshots/ec2-instances.png)
 
 ### 4. Bastion Host Connection to Private EC2
-**For secure access to the private subnets, I set up a bastion host. This instance serves as a jump box, allowing me to SSH into the private instances securely. By connecting to the bastion host, I can then access the instances in the private subnets.
+**For secure access to the private subnets, I set up a bastion host. This instance serves as a jump box, allowing me to SSH into the private instances securely. By connecting to the bastion host, I can then access the instances in the private subnets**.
 
-From my local machine, I used the following SSH command to connect to the bastion host:
+### From my local machine, I used the following SSH command to connect to the bastion host:
 ```bash
 scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/ubuntu
 ```
@@ -86,7 +86,7 @@ scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/u
 ![Load Balancer Configuration 9](screenshots/load-balancer-configuration9.png)
 
 ### 6. Launching the Web Application
-**Finally, I used Python’s built-in HTTP server to host the website. By running the following command, my website became externally visible:
+**Finally, I used Python’s built-in HTTP server to host the website. By running the following command, my website became externally visible**:
 ![Application Status](screenshots/application-status.png)
 
 ### 7. Application Access via DNS URL
