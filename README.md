@@ -1,13 +1,11 @@
 # AWS - VPC Public-Private Subnet Configuration in Production 
 
 ## Project Description
-This example demonstrates how to create a Virtual Private Cloud (VPC) suitable for servers in a production environment. To improve resiliency, you deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load Balancer. For additional security, the servers are deployed in private subnets. The servers receive requests through the load balancer and can connect to the internet via a NAT gateway. To enhance resiliency, the NAT gateway is deployed in both Availability Zones.
+This project's overview is depicted in the diagram below. The setup revolves around a Virtual Private Cloud (VPC) featuring both public and private subnets, thoughtfully distributed across two Availability Zones to ensure reliability.
 
-## Features
-- **2-Tier Architecture**: Separates the web and application tiers for improved organization and security.
-- **Auto Scaling Group**: Automatically adjusts the number of EC2 instances based on demand to ensure high availability and fault tolerance.
-- **Application Load Balancer**: Distributes incoming traffic across multiple targets, ensuring that the application remains responsive under varying loads.
-- **Bastion Host**: Provides secure access to EC2 instances in private subnets.
+Within each public subnet, there's a NAT gateway to facilitate outbound internet connectivity and a load balancer node for effective traffic distribution.
+
+On the other hand, the project's servers reside in the private subnets. Their deployment and termination are automated through an Auto Scaling group, allowing them to dynamically adapt to workload changes. These servers play a pivotal role in receiving traffic from the load balancer and can access the internet through the NAT gateway when necessary
 
 ## Architecture Diagram
 ![Architecture Diagram](screenshots/architecture-diagram.png)
