@@ -61,6 +61,15 @@ Below are screenshots demonstrating the different stages of the project setup an
 ```bash
 scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/ubuntu
 ```
+### The above command will copy the PEM file from your computer to the Bastion host. Once the file is successfully copied, move on to the next step. d. SSH into the Bastion host using the following command:
+```bash
+ssh -i aws-vpc-project.pem ubuntu@10.0.144.22
+```
+### After SSHing into the Bastion host, use the ls command to check if the aws-vpc-project.pem file is present. If it's not there, double-check your previous commands. f. Now, you can SSH into the private instance using the following command, replacing <private IP> with the private instance's IP address:
+```bash
+ssh -i aws-vpc-project.pem ubuntu@<private-ip>
+```
+
 ![Bastion Host Connection](screenshots/bastion-host-connection.png)
 ![Bastion Host Connection](screenshots/bastion-host-connection1.png)
 
@@ -74,11 +83,22 @@ scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/u
 ![Load Balancer Configuration 8](screenshots/load-balancer-configuration8.png)
 ![Load Balancer Configuration 9](screenshots/load-balancer-configuration9.png)
 
-### 6. Launching the Web Application
+### 6. Deploying and Launching the Web Application
+**We will deploy our application on one of the private instances to test the load balancer. h. After successfully SSHing into the private instance, create an HTML file using the Vim text editor**:
+```bash
+vim demo.html
+```
+ **This will open the Vim editor. Copy and paste any HTML content you like into the editor**.
+
 **Finally, I used Python’s built-in HTTP server to host the website. By running the following command, my website became externally visible**:
 ```python
 python3 -m http.server 8000
 ```
+Now, your application is deployed on the private instance on port 8000.
+
+
+### Note :
+We intentionally deployed the application on only one instance to check if the Load Balancer will distribute 50% of the traffic to one instance (which will receive a response) and 50% to another instance (which will not receive a response).
 ![Application Status](screenshots/application-status.png)
 
 ### 7. Application Access via DNS URL
