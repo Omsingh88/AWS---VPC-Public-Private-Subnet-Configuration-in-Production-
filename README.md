@@ -105,5 +105,11 @@ We intentionally deployed the application on only one instance to check if the L
 
 ### 7. Application Access via DNS URL
 ![Accessing Application 1](screenshots/application-access1.png)
+
+
 ![Accessing Application 2](screenshots/application-access2.png)
+
+Now We Successfully deployed Application securely in Private instance , We can access it through Internet using Load Balancer Securely .
+
+
 
