@@ -73,17 +73,7 @@ ssh -i aws-vpc-project.pem ubuntu@<private-ip>
 ![Bastion Host Connection](screenshots/bastion-host-connection.png)
 ![Bastion Host Connection](screenshots/bastion-host-connection1.png)
 
-### 5. Load Balancer and Target Group Creation
-![Load Balancer Configuration 1](screenshots/load-balancer-configuration1.png)
-![Load Balancer Configuration 2](screenshots/load-balancer-configuration2.png)
-![Load Balancer Configuration 4](screenshots/load-balancer-configuration4.png)
-![Load Balancer Configuration 5](screenshots/load-balancer-configuration5.png)
-![Load Balancer Configuration 6](screenshots/load-balancer-configuration6.png)
-![Load Balancer Configuration 7](screenshots/load-balancer-configuration7.png)
-![Load Balancer Configuration 8](screenshots/load-balancer-configuration8.png)
-![Load Balancer Configuration 9](screenshots/load-balancer-configuration9.png)
-
-### 6. Deploying and Launching the Web Application
+### 5. Deploying and Launching the Web Application
 **We will deploy our application on one of the private instances to test the load balancer. h. After successfully SSHing into the private instance, create an HTML file using the Vim text editor**:
 ```bash
 vim demo.html
@@ -100,6 +90,18 @@ Now, your application is deployed on the private instance on port 8000.
 ### Note :
 We intentionally deployed the application on only one instance to check if the Load Balancer will distribute 50% of the traffic to one instance (which will receive a response) and 50% to another instance (which will not receive a response).
 ![Application Status](screenshots/application-status.png)
+
+### 6. Load Balancer and Target Group Creation
+![Load Balancer Configuration 1](screenshots/load-balancer-configuration1.png)
+![Load Balancer Configuration 2](screenshots/load-balancer-configuration2.png)
+![Load Balancer Configuration 4](screenshots/load-balancer-configuration4.png)
+![Load Balancer Configuration 5](screenshots/load-balancer-configuration5.png)
+![Load Balancer Configuration 6](screenshots/load-balancer-configuration6.png)
+![Load Balancer Configuration 7](screenshots/load-balancer-configuration7.png)
+![Load Balancer Configuration 8](screenshots/load-balancer-configuration8.png)
+![Load Balancer Configuration 9](screenshots/load-balancer-configuration9.png)
+
+
 
 ### 7. Application Access via DNS URL
 ![Accessing Application 1](screenshots/application-access1.png)
