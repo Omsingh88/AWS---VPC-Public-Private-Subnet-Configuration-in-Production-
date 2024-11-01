@@ -35,8 +35,6 @@ The application running on the private servers can be accessed using the DNS nam
 ### Example URL
 - The application can be accessed at: `http://<your-load-balancer-dns-name>`
 
-## Application Status on EC2 Instances
-The application running on the EC2 instances can be verified for its status, ensuring that it is up and running as intended.
 
 ## Screenshots
 Below are screenshots demonstrating the different stages of the project setup and execution:
@@ -59,7 +57,7 @@ Below are screenshots demonstrating the different stages of the project setup an
 ### 4. Bastion Host Connection to Private EC2
 **For secure access to the private subnets, I set up a bastion host. This instance serves as a jump box, allowing me to SSH into the private instances securely. By connecting to the bastion host, I can then access the instances in the private subnets**.
 
-### From my local machine, I used the following SSH command to connect to the bastion host:
+### From my local machine, I used the following SCP command to send the private keys (.pem file) to the bastion host before doing ssh to the instance in priavte subnet:
 ```bash
 scp -i <path-to-your-pem-file>/your-key.pem ubuntu@<bastion-instance-ip>:/home/ubuntu
 ```
