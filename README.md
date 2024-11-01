@@ -8,6 +8,8 @@ Within each public subnet, there's a NAT gateway to facilitate outbound internet
 On the other hand, the project's servers reside in the private subnets. Their deployment and termination are automated through an Auto Scaling group, allowing them to dynamically adapt to workload changes. These servers play a pivotal role in receiving traffic from the load balancer and can access the internet through the NAT gateway when necessary
 
 ## Architecture Diagram
+
+
 ![Architecture Diagram](screenshots/architecture-diagram.png)
 
 ## Implementation Details
@@ -41,17 +43,34 @@ Below are screenshots demonstrating the different stages of the project setup an
 
 ### 1. Creating the VPC and Resources
 ![Creating VPC 1](screenshots/vpc-creation1.png)
+
+
 ![Creating VPC 2](screenshots/vpc-creation2.png)
+
+
 ![Creating VPC 3](screenshots/vpc-creation3.png)
+
+
 
 ### 2. Auto Scaling Group Configuration
 ![Auto Scaling Group Configuration 1](screenshots/auto-scaling-group-configuration1.png)
+
+
 ![Auto Scaling Group Configuration 2](screenshots/auto-scaling-group-configuration2.png)
+
+
 ![Auto Scaling Group Configuration 3](screenshots/auto-scaling-group-configuration3.png)
+
+
 ![Auto Scaling Group Configuration 4](screenshots/auto-scaling-group-configuration4.png)
+
+
 ![Auto Scaling Group Configuration 5](screenshots/auto-scaling-group-configuration5.png)
 
+
 ### 3. EC2 Instances Created by Auto Scaling
+
+
 ![EC2 Instances](screenshots/ec2-instances.png)
 
 ### 4. Bastion Host Connection to Private EC2
@@ -71,6 +90,8 @@ ssh -i aws-vpc-project.pem ubuntu@<private-ip>
 ```
 
 ![Bastion Host Connection](screenshots/bastion-host-connection.png)
+
+
 ![Bastion Host Connection](screenshots/bastion-host-connection1.png)
 
 ### 5. Deploying and Launching the Web Application
@@ -89,16 +110,32 @@ Now, your application is deployed on the private instance on port 8000.
 
 ### Note :
 We intentionally deployed the application on only one instance to check if the Load Balancer will distribute 50% of the traffic to one instance (which will receive a response) and 50% to another instance (which will not receive a response).
+
+
 ![Application Status](screenshots/application-status.png)
 
 ### 6. Load Balancer and Target Group Creation
 ![Load Balancer Configuration 1](screenshots/load-balancer-configuration1.png)
+
+
 ![Load Balancer Configuration 2](screenshots/load-balancer-configuration2.png)
+
+
 ![Load Balancer Configuration 4](screenshots/load-balancer-configuration4.png)
+
+
 ![Load Balancer Configuration 5](screenshots/load-balancer-configuration5.png)
+
+
 ![Load Balancer Configuration 6](screenshots/load-balancer-configuration6.png)
+
+
 ![Load Balancer Configuration 7](screenshots/load-balancer-configuration7.png)
+
+
 ![Load Balancer Configuration 8](screenshots/load-balancer-configuration8.png)
+
+
 ![Load Balancer Configuration 9](screenshots/load-balancer-configuration9.png)
 
 
